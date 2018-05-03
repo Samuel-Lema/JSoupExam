@@ -22,7 +22,7 @@ public class Main {
             // Muestro el titulo de página
             System.out.println("Titulo de la página: " + doc.title());
             
-            // Recojo la temperatura y el tiempo de la página
+            // Recojo la temperatura y el tiempo de la página (ambos lo coge por el nombre de la clase, solo selecciona el 1º)
             Element temperatura = doc.select("div.today_nowcard-temp").first();
             Element descTiempo = doc.select("div.today_nowcard-phrase").first();
             
@@ -31,6 +31,7 @@ public class Main {
             System.out.println("El tiempo: " + descTiempo.text());
         } catch (IOException ex) {
             
+            // En caso de no carga la página por algun motivo manda el siguiente mensaje
             System.out.println("La página no existe, o no tienes conexión a internet.");
         }
     }
